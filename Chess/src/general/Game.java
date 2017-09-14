@@ -19,7 +19,6 @@ import java.util.*;
 
 import player.Player;
 import player.PlayerAI;
-import player.PlayerHuman;
   
 /**
  * 
@@ -108,8 +107,8 @@ public class Game {
 		boolean checkmate = false;
 		if (mode==1) {
 			//create two human players
-			PlayerHuman player1 = new PlayerHuman(0);
-			PlayerHuman player2 = new PlayerHuman(1);
+			Player player1 = new Player(0);
+			Player player2 = new Player(1);
 			System.out.println("Player1: White");
 			System.out.println("Player2: Black");
 			int whosTurn = 0; //white starts
@@ -161,7 +160,7 @@ public class Game {
 			}
 		} else if (mode==2) {
 			//create human and AI
-			PlayerHuman player1 = new PlayerHuman(0);
+			Player player1 = new Player(0);
 			PlayerAI player2 = new PlayerAI(board, move, 1);
 			System.out.println("Player1: White");
 			System.out.println("Player2: Black");

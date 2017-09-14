@@ -26,7 +26,6 @@ import java.util.*;
 import javax.swing.*;
 import player.Player;
 import player.PlayerAI;
-import player.PlayerHuman;
 import tools.Index;
  
 /**
@@ -260,8 +259,8 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
 		//create players
 		playerAI = new PlayerAI(board, getMove(), 1);
 		playerAI2 = new PlayerAI(board, getMove(), 0);
-		player1 = new PlayerHuman(0);
-		player2 = new PlayerHuman(1);
+		player1 = new Player(0);
+		player2 = new Player(1);
 	}
 
 	/**
