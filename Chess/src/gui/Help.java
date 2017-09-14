@@ -32,6 +32,8 @@ import javax.swing.*;
 public class Help extends JFrame {
 	
 	private static final long serialVersionUID = -7279256753979554192L;
+	private static final int WINDOW_WIDTH = 900;
+	private static final int WINDOW_HEIGHT = 650;
 
 	/**
 	 * Constructor.
@@ -99,7 +101,7 @@ public class Help extends JFrame {
 			GridBagConstraints.CENTER, GridBagConstraints.BOTH,
 			new Insets(0, 0, 5, 5), 0, 0));
 		
-		setSize(900, 650);
+		setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		setLocationRelativeTo(null);
 	}
 	

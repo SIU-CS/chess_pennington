@@ -766,37 +766,6 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
     	return gLoc;
     }
     
-    
-//    /**
-//     * Returns Index object which contains x&y coordinates
-//     * for upper left corner of selected square notation.
-//     * @param x
-//     * @param y
-//     * @return Index
-//     */
-    /*
-    private Index coordinatesToPieceLoc(int x, int y) {
-    	//get frame size
-    	int width = getWidth();
-    	int height = getHeight();
-
-    	//horizontal square's left corner location possibilities
-    	int[] columnCoord = {0, (width/8)-1, 2*(width/8)-1, 3*(width/8)-1, 4*(width/8)-1,
-    	5*(width/8)-1, 6*(width/8)-1, 7*(width/8)-1};
-
-    	//vertical square's left corner location possibilities
-    	int[] rowCoord = {0, (height/8)-1, 2*(height/8)-1, 3*(height/8)-1, 4*(height/8)-1,
-    	5*(height/8)-1, 6*(height/8)-1, 7*(height/8)-1};
-    	
-    	Index gLoc = new Index(0, 0);
-    	//get upper left corner location
-    	gLoc.setX(columnCoord[y]);
-    	gLoc.setY(rowCoord[x]);
-    	
-    	return gLoc;
-    }
-    */
-    
     /**
      * This method is run automatically when the object is created.
      */
