@@ -50,7 +50,7 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
 	private Player player1, player2;
 	private PlayerAI playerAI, playerAI2;
 	private Move move;
-	private int concecutMEvent = 0;
+	private int concecutiveMouseEvent = 0;
 	private boolean showLegalMoves = true;
 	private static boolean humanVsHumanMode;
 	private static boolean humanVsAiMode;
@@ -889,9 +889,9 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
      */
     public boolean isSrcSqValid(String srcSq, Move move, Board board, Player player) {
     	//check source square notation for validity
-    	if (!move.checkSqValidity(srcSq)) {
-    		return false;
-    	}
+  //  	if (!move.checkSqValidity(srcSq)) {
+   // 		return false;
+    //	}
 		//check if own piece exists on selected source square.
 		ArrayList<Piece> ownPieces = board.getPiecesFromOneSide(player.getSide());
 		for (Piece p : ownPieces) {
@@ -913,9 +913,9 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
      */
     public boolean isDestSqValid(String srcSq, String destSq, Move move, Board board, Player player) {
     	//check source square notation for validity
-    	if (!move.checkSqValidity(destSq)) {
-    		return false;
-    	}
+ //   	if (!move.checkSqValidity(destSq)) {
+   // 		return false;
+    //	}
 		Piece piece = board.notationToPiece(srcSq);
 		//get all movements that are allowed for the selected piece
 		ArrayList<ArrayList<Integer>> legalMoves = move.possiblePieceMoves(piece, false);
@@ -965,8 +965,8 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
 				player = player2;
 			}
 			//set ready to accept mouse click for destination square
-			if (concecutMEvent==1) {
-				concecutMEvent=2;
+			if (concecutiveMouseEvent==1) {
+				concecutiveMouseEvent=2;
 			}
 			
 			switch(e.getModifiers()) {
@@ -983,7 +983,7 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
 						setSrcSelected(true);
 						//set clicked square as selected source
 						setSelectedSrc(getClickedSquare());
-						concecutMEvent=1;
+						concecutiveMouseEvent=1;
 						if (showLegalMoves) {
 							repaint();
 						}
@@ -992,7 +992,7 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
 								"Move error", JOptionPane.PLAIN_MESSAGE);
 					}
 				}
-				if (concecutMEvent==2) {
+				if (concecutiveMouseEvent==2) {
 					//if source is selected but not destination
 					if (isSrcSelected() && !isDestSelected()) {
 							//check if clicked destination square is empty or has enemy piece
@@ -1003,7 +1003,7 @@ public class Gui extends JPanel implements Runnable, MouseListener  {
 								//set clicked square as selected destination
 								setSelectedDest(getClickedSquare());
 								//reset concecutive mouse event
-								concecutMEvent=0;
+								concecutiveMouseEvent=0;
 							} else {
 									JOptionPane.showMessageDialog(f, "Destination square not valid.",
 											"Move error", JOptionPane.PLAIN_MESSAGE);	
